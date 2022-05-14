@@ -3,23 +3,18 @@ import Movie from "./Movie";
 import SortingButtons from "./SortingButtons";
 
 export default function MovieList() {
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState(JSON.parse(localStorage.getItem('movies')));
     const titleRef = useRef();
     const ratingRef = useRef();
 
     useEffect(() => {
-        const storedMovies = JSON.parse(localStorage.getItem('movies'))
-        if (storedMovies) setMovies(storedMovies)
-    }, []);
-
-    useEffect(() => {
         localStorage.setItem('movies', JSON.stringify(movies));
-    }, [movies]);
+    }, [movies])
 
     function addMovie(event) {
         /*
-        Lägger till ett filmobjekt i movies-listan genom setMovies
-        TODO - lägg till validering och spara till localStorage
+        Validerar formuläret och lägger till ett filmobjekt i movies-listan genom setMovies
+        TODO renskriv HTML och lägg till stjärnor
         */
         let validation = true;       
 
