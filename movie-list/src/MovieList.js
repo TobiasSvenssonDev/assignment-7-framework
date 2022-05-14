@@ -25,6 +25,10 @@ export default function MovieList(){
         ratingRef.current.value = ""
     }
 
+    function deleteMovie(id){
+        setMovies(movies.filter((item)=> item.id !== id));
+    }
+
     return (
         <div>
         <fieldset>
@@ -42,7 +46,7 @@ export default function MovieList(){
         
             <h1>Inlagda filmer</h1>
             <ul className="list-group">
-                { movies.map(movie => <Movie key={movie.id} item={movie} />)}                
+                { movies.map(movie => <Movie key={movie.id} item={movie} deleteMovie={deleteMovie}/>)}                
             </ul>
         </div>
     )
