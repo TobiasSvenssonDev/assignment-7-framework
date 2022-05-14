@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import MovieList from './MovieList'
-//import uuidv4 from 'uuid/v4'
+
 
 const LOCAL_STORAGE_KEY = 'movieApp.movie'
 
