@@ -1,4 +1,4 @@
-export default function addMovieForm(){
+export default function AddMovieForm() {
     return (
         <fieldset>
             <input className="form-group" placeholder="Titel här..."></input>
@@ -10,7 +10,6 @@ export default function addMovieForm(){
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-
-        </div>
+        </fieldset>
     )
-}
+};
