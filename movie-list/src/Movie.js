@@ -1,9 +1,16 @@
 import React from 'react'
 
-export default function Movie(props) {
+export default function Movie({ movie, toggleMovie }) {
+  function handleMovieClick() {
+    toggleMovie(movie.id)
+  }
+  
   return (
-    <li className='list-group-item'>
-        { props.item.title}<span className='float-end'>{props.item.rating}<button className='btn btn-sm btn-danger mx-3' onClick={() => props.deleteMovie(props.item.id)}>X</button></span>
-    </li>
+    <div>
+      <label>
+        <input type="checkbox" checked={movie.complete} onChange={handleMovieClick} />
+        {movie.name}
+      </label>
+    </div>
   )
 }
