@@ -40,6 +40,16 @@ export default function MovieList() {
         setMovies(movies.filter((item) => item.id !== id));
     }
 
+    function sortAlpha(){
+        let moviesAlpha = [...movies].sort((a, b) => a.title.localeCompare(b.title))
+        setMovies(moviesAlpha)
+    }
+
+    function sortNum(){
+        let moviesNum = [...movies].sort((a, b) => a.rating.localeCompare(b.rating))
+        setMovies(moviesNum)
+    }
+
     return (
         <div>
             <fieldset>
@@ -59,7 +69,9 @@ export default function MovieList() {
             <ul className="list-group">
                 {movies.map(movie => <Movie key={movie.id} item={movie} deleteMovie={deleteMovie} />)}
             </ul>
-            <SortingButtons />
+
+            <button className="btn btn-lg btn-info m-3" onClick={sortAlpha}>Sort alpha</button>
+            <button className="btn btn-lg btn-info m-3" onClick={sortNum}>Sort numerical</button>
 
 
         </div>
