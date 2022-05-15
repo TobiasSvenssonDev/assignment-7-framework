@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import Movie from "./Movie";
-import SortingButtons from "./SortingButtons";
 
 export default function MovieList() {
     const [movies, setMovies] = useState(JSON.parse(localStorage.getItem('movies')));
