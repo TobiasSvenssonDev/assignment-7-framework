@@ -51,9 +51,11 @@ export default function MovieList() {
 
     return (
         <div>
-            <fieldset>
-                <input className="form-control" placeholder="Titel här..." ref={titleRef}></input>
-                <select className="form-control" ref={ratingRef}>
+            <form className="form-group">
+                <label htmlFor="title">Ange titel</label>
+                <input id="title" className="form-control" placeholder="Titel här..." ref={titleRef}></input>
+                <label htmlFor="rating">Ange titel</label>
+                <select id="rating" className="form-control" ref={ratingRef}>
                     <option defaultValue={""} placeholder="Välj betyg här"></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -61,8 +63,8 @@ export default function MovieList() {
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button className="form-control btn btn-success" onClick={addMovie}>Spara film</button>
-            </fieldset>
+                <button className="form-control btn btn-success mt-3 mb-3" onClick={addMovie}>Spara film</button>
+            </form>
 
             <h1>Inlagda filmer</h1>
             <ul className="list-group">
