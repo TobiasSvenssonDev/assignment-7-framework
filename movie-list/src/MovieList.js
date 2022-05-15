@@ -45,7 +45,7 @@ export default function MovieList() {
             <fieldset>
                 <input className="form-control" placeholder="Titel här..." ref={titleRef}></input>
                 <select className="form-control" ref={ratingRef}>
-                    <option defaultValue={""}>Välj betyg här</option>
+                    <option defaultValue={""} placeholder="Välj betyg här"></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
